@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "grafico.h"
 
 #define MAX 20
@@ -14,8 +13,6 @@
 
 #define VACIO 0
 #define ACTIVO 1
-
-
 
 //////////////CONTADOR DE EDAD////////////////////////
 
@@ -63,6 +60,7 @@ int contadorAdulto(Persona dato[MAX])
     return contador;
 }
 /////////////////////////////////////////////////////
+
 void muestraContador(Persona dato[MAX])
 {
 

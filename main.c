@@ -7,34 +7,18 @@
 #include <string.h>
 
 #include "grafico.h"
+#include "validaciones.h"
 
 #define MAX 20
 
-
 #define LISTA 5 // y tambien es FILA
 #define COLUMNA 3
-
 
 #define ASC 1
 #define DESC 2
 
 #define VACIO 0
 #define ACTIVO 1
-
-typedef struct
-{
-    char nombre[50];
-    int edad;
-    int dni;
-    int estado;
-} Persona;
-
-//////////////VALIDACIONES///////////////
-int validarNumero(char mensaje[], char cant[]);
-int esNumerico(char num[]);
-int validarLetra(char mensaje[], char cant[]);
-int esSoloLetras(char letra[]);
-void pideCaracter(char mensaje[], char cant[]);
 
 //////////////ABM///////////////////////
 void agregar(Persona dato[MAX]);
@@ -46,8 +30,6 @@ void completarBusqueda(Persona dato[MAX]);
 int buscarPersona(Persona dato[MAX]);
 void ordenarNombre(Persona dato[MAX], int orden);
 void mostrarNombre(Persona dato[MAX]);
-
-
 
 void mostrarMenu();
 
@@ -209,9 +191,6 @@ void agregar(Persona dato[MAX])
     }
 }
 
-
-
-
 /////////////////////////////////////////////////////
 void limpio(Persona dato[MAX])
 {
@@ -255,71 +234,6 @@ void baja(Persona dato[MAX])
         printf("\nNo se encontro el dato\n");
     }
 }
-
-///////////////////----VALIDACIONES---------////////////////////////////////////
-void pideCaracter(char mensaje[], char cant[])
-{
-    printf("%s", mensaje);
-    fflush(stdin);
-    scanf("%[^\n]", cant);
-    fflush(stdin);
-}
-/////////////////////////////////////////////////////////////////////////////
-int validarNumero(char mensaje[], char cant[])
-{
-    char aux[256];
-    pideCaracter(mensaje, aux);
-    if (esNumerico(aux))
-    {
-        strcpy(cant, aux);
-        return 1;
-    }
-    return 0;
-}
-
-/////////////////////////////////////////////////////////////////////////////
-
-int validarLetra(char mensaje[], char cant[])
-{
-    char aux[256];
-    pideCaracter(mensaje, aux);
-    if (esSoloLetras(aux))
-    {
-        strcpy(cant, aux);
-        return 1;
-    }
-    return 0;
-}
-
-/////////////////////////////////////////////////////////////////////////////
-
-int esSoloLetras(char letra[])
-{
-    int i = 0;
-    while (letra[i] != '\0')
-    {
-        if ((letra[i] != ' ') && (letra[i] < 'a' || letra[i] > 'z') && (letra[i] < 'A' || letra[i] > 'Z'))
-            return 0;
-        i++;
-    }
-    return 1;
-}
-
-/////////////////////////////////////////////////////////////////////////////
-
-int esNumerico(char num[])
-{
-    int i = 0;
-    while (num[i] != '\0')
-    {
-        if (num[i] < '0' || num[i] > '9')
-            return 0;
-        i++;
-    }
-    return 1;
-}
-
-///////////////////////////////////////////////////////////////////////////
 
 int buscarPersona(Persona dato[MAX])
 {
@@ -385,4 +299,3 @@ void mostrarNombre(Persona dato[MAX])
         }
     }
 }
-
