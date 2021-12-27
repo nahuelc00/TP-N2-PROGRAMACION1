@@ -1,18 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 #include "grafico.h"
 
-#define MAX 20
-
-#define LISTA 5 // y tambien es FILA
-#define COLUMNA 3
-
-#define ASC 1
-#define DESC 2
-
-#define VACIO 0
-#define ACTIVO 1
 
 //////////////CONTADOR DE EDAD////////////////////////
 

@@ -2,23 +2,10 @@
 // items de esta estructura y con un menu como el
 // siguiente
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "grafico.h"
 #include "validaciones.h"
+#include "ordenar.h"
 
-#define MAX 20
-
-#define LISTA 5 // y tambien es FILA
-#define COLUMNA 3
-
-#define ASC 1
-#define DESC 2
-
-#define VACIO 0
-#define ACTIVO 1
 
 //////////////ABM///////////////////////
 void agregar(Persona dato[MAX]);
@@ -28,8 +15,7 @@ void alta(Persona dato[MAX]);
 void baja(Persona dato[MAX]);
 void completarBusqueda(Persona dato[MAX]);
 int buscarPersona(Persona dato[MAX]);
-void ordenarNombre(Persona dato[MAX], int orden);
-void mostrarNombre(Persona dato[MAX]);
+
 
 void mostrarMenu();
 
@@ -257,45 +243,3 @@ int buscarPersona(Persona dato[MAX])
     return posicion;
 }
 
-/////////////////////////////////--ordenar---/////////////////
-
-void ordenarNombre(Persona dato[MAX], int orden)
-{
-
-    for (int i = 0; i < LISTA; i++)
-    {
-        int ordenado = 0;
-
-        for (int j = 0; j < LISTA - 1 - i; j++)
-        {
-            if ((strcmp(dato[j].nombre, dato[j + 1].nombre) > 0 && orden == 1) ||
-                strcmp(dato[j].nombre, dato[j + 1].nombre) < 0 && orden == 2)
-            {
-
-                Persona aux;
-                memcpy(&aux, &dato[j], sizeof(Persona));
-                memcpy(&dato[j], &dato[j + 1], sizeof(Persona));
-                memcpy(&dato[j + 1], &aux, sizeof(Persona));
-                ordenado = 1;
-            }
-        }
-        if (ordenado == 0)
-        {
-            break;
-        }
-    }
-}
-
-///////////////////////////////////////////////////////////////////
-
-void mostrarNombre(Persona dato[MAX])
-{
-
-    for (int i = 0; i < LISTA; i++)
-    {
-        if (dato[i].nombre != 0)
-        {
-            printf("\n%i-->Nombre[%s] Edad[%d] DNI[%d]\n", i + 1, dato[i].nombre, dato[i].edad, dato[i].dni);
-        }
-    }
-}
