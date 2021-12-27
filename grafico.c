@@ -71,7 +71,7 @@ void limpiarMatriz(char edades[LISTA][COLUMNA])
     {
         for (int j = 0; j < COLUMNA; j++)
         {
-            edades[i][j] = 'x';
+            edades[i][j] = ' ';
         }
     }
 }

@@ -1,0 +1,165 @@
+#include "abm.h"
+
+
+void mostrarMenu()
+{
+
+    printf("1- Agregar persona\n");
+    printf("2- Borrar persona\n");
+    printf("3- mostrar\n");
+    printf("4- Imprimir lista ordenada por nombre\n");
+    printf("5- Imprimir grafico de edades\n\n");
+    printf("6- Salir\n");
+}
+
+/////////////////////////////////////////////////////
+void agregar(Persona dato[MAX])
+{
+
+    char NOM[MAX];
+    char EDAD[MAX];
+    char DNI[MAX];
+    printf("\nCARGUE ALGUN DATO\n");
+    for (int i = 0; i < LISTA; i++)
+    {
+
+        if (dato[i].estado == VACIO)
+        {
+
+            if (!validarLetra("\nNombre: ", NOM))
+            {
+                printf("\n Lo ingresado no es letra\n");
+                for (int i = 0; i < LISTA; i++)
+                {
+                    if (dato[i].estado == VACIO)
+                    {
+                        strcpy(dato[i].nombre, "");
+                        dato[i].edad = 0;
+                        dato[i].dni = 0;
+                        dato[i].estado = VACIO;
+                    }
+                }
+                break;
+            }
+            else
+            {
+                strcpy(dato[i].nombre, NOM);
+            }
+
+            if (!validarNumero("\nEdad: ", EDAD))
+            {
+                printf("\n Lo ingresado no es numero\n");
+                for (int i = 0; i < LISTA; i++)
+                {
+                    if (dato[i].estado == VACIO)
+                    {
+                        strcpy(dato[i].nombre, "");
+                        dato[i].edad = 0;
+                        dato[i].dni = 0;
+                        dato[i].estado = VACIO;
+                    }
+                }
+                break;
+            }
+            else
+            {
+                dato[i].edad = atoi(EDAD);
+
+                muestraContador(dato);
+            }
+
+            if (!validarNumero("\nDNI: ", DNI))
+            {
+                printf("\n Lo ingresado no es numero\n");
+
+                for (int i = 0; i < LISTA; i++)
+                {
+                    if (dato[i].estado == VACIO)
+                    {
+                        strcpy(dato[i].nombre, "");
+                        dato[i].edad = 0;
+                        dato[i].dni = 0;
+                        dato[i].estado = VACIO;
+                    }
+                }
+
+                break;
+            }
+            else
+            {
+                dato[i].dni = atoi(DNI);
+            }
+
+            dato[i].estado = ACTIVO;
+            break;
+        }
+    }
+}
+
+/////////////////////////////////////////////////////
+void limpio(Persona dato[MAX])
+{
+    for (int i = 0; i < LISTA; i++)
+    {
+        strcpy(dato[i].nombre, " ");
+        dato[i].edad = 0;
+        dato[i].dni = 0;
+        dato[i].estado = VACIO;
+    }
+}
+///////////////////////////////////////////////////////
+void mostrar(Persona dato[MAX])
+{
+
+    for (int i = 0; i < LISTA; i++)
+    {
+
+        printf("%i ->>Nombre: %s,Edad: %d,DNI:%d,Estado:%d\n", i + 1,
+               dato[i].nombre,
+               dato[i].edad,
+               dato[i].dni,
+               dato[i].estado);
+    }
+};
+
+void baja(Persona dato[MAX])
+{
+    printf("\nBORRAR UN DATO \n");
+    int posicion = buscarPersona(dato);
+
+    if (posicion != -1)
+    {
+        strcpy(dato[posicion].nombre, " ");
+        dato[posicion].edad = 0;
+        dato[posicion].dni = 0;
+        dato[posicion].estado = VACIO;
+    }
+    else
+    {
+        printf("\nNo se encontro el dato\n");
+    }
+}
+
+int buscarPersona(Persona dato[MAX])
+{
+    int posicion = -1;
+    char nombreAux[MAX];
+
+    printf("\nPara buscar una persona escriba su nombre: \n ");
+    fflush(stdin);
+    scanf("%[^\n]", nombreAux);
+    fflush(stdin);
+
+    for (int i = 0; i < LISTA; i++)
+    {
+
+        if (dato[i].estado == ACTIVO && strcmp(dato[i].nombre, nombreAux) == 0)
+        {
+            posicion = i;
+        }
+    }
+
+    return posicion;
+}
+
+
