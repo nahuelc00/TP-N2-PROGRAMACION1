@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "grafico.h"
+
 #define MAX 20
 
 #define LISTA 5 // y tambien es FILA
@@ -13,13 +15,7 @@
 #define VACIO 0
 #define ACTIVO 1
 
-typedef struct
-{
-    char nombre[50];
-    int edad;
-    int dni;
-    int estado;
-} Persona;
+
 
 //////////////CONTADOR DE EDAD////////////////////////
 
