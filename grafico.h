@@ -11,7 +11,6 @@ int contadorMenor(Persona dato[MAX]);
 int contadorMayor(Persona dato[MAX]);
 int contadorAdulto(Persona dato[MAX]);
 
-void muestraContador(Persona dato[MAX]);
 
 
 #endif

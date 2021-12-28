@@ -3,7 +3,7 @@
 
 void mostrarMenu()
 {
-
+    printf("\n");
     printf("1- Agregar persona\n");
     printf("2- Borrar persona\n");
     printf("3- mostrar\n");
@@ -19,14 +19,13 @@ void agregar(Persona dato[MAX])
     char NOM[MAX];
     char EDAD[MAX];
     char DNI[MAX];
-    printf("\nCARGUE ALGUN DATO\n");
+    
     for (int i = 0; i < LISTA; i++)
     {
 
-        if (dato[i].estado == VACIO)
-        {
-
-            if (!validarLetra("\nNombre: ", NOM))
+        if (dato[i].estado == VACIO){
+            
+            if (!validarLetra("\nIngrese Nombre: ", NOM))
             {
                 printf("\n Lo ingresado no es letra\n");
                 for (int i = 0; i < LISTA; i++)
@@ -46,7 +45,7 @@ void agregar(Persona dato[MAX])
                 strcpy(dato[i].nombre, NOM);
             }
 
-            if (!validarNumero("\nEdad: ", EDAD))
+            if (!validarNumero("\nIngrese Edad: ", EDAD))
             {
                 printf("\n Lo ingresado no es numero\n");
                 for (int i = 0; i < LISTA; i++)
@@ -64,11 +63,9 @@ void agregar(Persona dato[MAX])
             else
             {
                 dato[i].edad = atoi(EDAD);
-
-                muestraContador(dato);
             }
 
-            if (!validarNumero("\nDNI: ", DNI))
+            if (!validarNumero("\nIngrese DNI: ", DNI))
             {
                 printf("\n Lo ingresado no es numero\n");
 
@@ -114,7 +111,7 @@ void mostrar(Persona dato[MAX])
     for (int i = 0; i < LISTA; i++)
     {
 
-        printf("%i ->>Nombre: %s,Edad: %d,DNI:%d,Estado:%d\n", i + 1,
+        printf("\n%i ->>Nombre: %s  Edad: %d  DNI:%d  Estado:%d\n", i + 1,
                dato[i].nombre,
                dato[i].edad,
                dato[i].dni,

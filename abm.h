@@ -3,7 +3,6 @@
 
 #include "librerias.h"
 #include "validaciones.h"
-#include "grafico.h"
 
 //////////////ABM///////////////////////
 void agregar(Persona dato[MAX]);

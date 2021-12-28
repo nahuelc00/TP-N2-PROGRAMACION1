@@ -47,20 +47,9 @@ int contadorAdulto(Persona dato[MAX])
     }
     return contador;
 }
-/////////////////////////////////////////////////////
 
-void muestraContador(Persona dato[MAX])
-{
 
-    int menor = contadorMenor(dato);
-    int mayor = contadorMayor(dato);
-    int adulto = contadorAdulto(dato);
 
-    printf("\n");
-    printf("\nGente con edad menor a 18: %d", menor);
-    printf("\nGente con edad de 19 a 35: %d", mayor);
-    printf("\nGente con edad mayor a 35: %d", adulto);
-}
 
 ///////////////////grafico///////////////////////////////
 
@@ -124,7 +113,7 @@ void muestraValor(char edades[LISTA][COLUMNA])
     {
         for (int j = 0; j < COLUMNA; j++)
         {
-            printf(" [%c]  ", edades[i][j]);
+            printf("  %c    ", edades[i][j]);
         }
         printf(" \n");
     }

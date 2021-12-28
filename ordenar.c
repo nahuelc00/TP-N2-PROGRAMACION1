@@ -40,9 +40,13 @@ void mostrarNombre(Persona dato[MAX])
 
     for (int i = 0; i < LISTA; i++)
     {
-        if (dato[i].nombre != 0)
+        if (dato[i].estado != 0)
         {
-            printf("\n%i-->Nombre[%s] Edad[%d] DNI[%d]\n", i + 1, dato[i].nombre, dato[i].edad, dato[i].dni);
+              printf("\nNombre: %s  Edad: %d  DNI:%d  Estado:%d\n",
+               dato[i].nombre,
+               dato[i].edad,
+               dato[i].dni,
+               dato[i].estado);
         }
     }
 }
