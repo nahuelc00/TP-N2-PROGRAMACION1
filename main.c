@@ -35,36 +35,36 @@ int main()
         switch (opcion)
         {
         case 1:
+           system("cls");
             agregar(dato);
             break;
 
         case 2:
+        system("cls");
             baja(dato);
             break;
 
         case 3:
-
+        system("cls");
             mostrar(dato);
             break;
 
         case 4:
+        system("cls");
             ordenarNombre(dato, ASC);
             mostrarNombre(dato);
             break;
         case 5:
-
-            limpiarMatriz(edades);
-
+        system("cls");
             cargaValor(edades, contadorMenor(dato), contadorMayor(dato), contadorAdulto(dato));
-
             muestraValor(edades);
-
             break;
         case 6:
+        system("cls");
             break;
 
         default:
-            printf("NO ES OPCION DEL MENU\n");
+            printf("\nNO ES OPCION DEL MENU\n");
         }
 
     } while (opcion != 6);

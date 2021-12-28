@@ -138,10 +138,11 @@ void baja(Persona dato[MAX])
         dato[posicion].dni = 0;
         dato[posicion].estado = VACIO;
         contadorDeEstado--;
+        printf("\nDATO BORRADO\n");
     }
     else
     {
-        printf("\nNo se encontro el dato\n");
+        printf("\nNO SE ESCUENTRA EL DATO\n");
     }
 }
 

@@ -3,7 +3,6 @@
 
 #include "librerias.h"
 
-void limpiarMatriz(char edades[LISTA][COLUMNA]);
 void cargaValor(char edades[LISTA][COLUMNA], int v1, int v2, int v3);
 void muestraValor(char edades[LISTA][COLUMNA]);
 

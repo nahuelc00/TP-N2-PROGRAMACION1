@@ -49,27 +49,22 @@ int contadorAdulto(Persona dato[MAX])
 }
 
 
-
-
 ///////////////////grafico///////////////////////////////
 
-void limpiarMatriz(char edades[LISTA][COLUMNA])
-{
 
-    for (int i = 0; i < LISTA + 1; i++)
+void cargaValor(char edades[LISTA][COLUMNA], int v1, int v2, int v3)
+{
+     //////////////////BORRADO LOGICO////////////////
+
+       for (int i = 0; i < LISTA + 1; i++)
     {
         for (int j = 0; j < COLUMNA; j++)
         {
             edades[i][j] = ' ';
         }
     }
-}
 
-///////////////////////////////////////////////////////////////////
-
-void cargaValor(char edades[LISTA][COLUMNA], int v1, int v2, int v3)
-{
-
+    //////////////////CARGA GRAFICO////////////////
     if (v1 > 0)
     {
         for (int i = v1; i > 0; i--)
