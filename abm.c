@@ -1,5 +1,6 @@
 #include "abm.h"
 
+int contadorDeEstado = 0;
 
 void mostrarMenu()
 {
@@ -15,16 +16,21 @@ void mostrarMenu()
 /////////////////////////////////////////////////////
 void agregar(Persona dato[MAX])
 {
-
     char NOM[MAX];
     char EDAD[MAX];
     char DNI[MAX];
-    
+
+    if (contadorDeEstado == LISTA)
+    {
+        printf("\nNO HAY MAS ESPACIOS PARA LLENAR\n");
+    }
+
     for (int i = 0; i < LISTA; i++)
     {
 
-        if (dato[i].estado == VACIO){
-            
+        if (dato[i].estado == VACIO)
+        {
+
             if (!validarLetra("\nIngrese Nombre: ", NOM))
             {
                 printf("\n Lo ingresado no es letra\n");
@@ -88,6 +94,7 @@ void agregar(Persona dato[MAX])
             }
 
             dato[i].estado = ACTIVO;
+            contadorDeEstado++;
             break;
         }
     }
@@ -130,6 +137,7 @@ void baja(Persona dato[MAX])
         dato[posicion].edad = 0;
         dato[posicion].dni = 0;
         dato[posicion].estado = VACIO;
+        contadorDeEstado--;
     }
     else
     {
@@ -158,5 +166,3 @@ int buscarPersona(Persona dato[MAX])
 
     return posicion;
 }
-
-
