@@ -7,8 +7,6 @@
 #include "ordenar.h"
 #include "abm.h"
 
-
-
 int main()
 {
 
@@ -18,57 +16,65 @@ int main()
     limpio(dato);
 
     int opcion = 0;
+    system("cls");
 
     do
     {
-
         mostrarMenu();
 
-        if (!validarNumero("\ningrese una opcion del menu: ", auxMenu))
+        if (validarNumero("\ningrese una opcion del menu: ", auxMenu) == 0)
         {
-
+            system("cls");
             printf("\nLO INGRESADO NO ES UN NUMERO!!\n");
         }
-
-        opcion = atoi(auxMenu);
-
-        switch (opcion)
+        else
         {
-        case 1:
-           system("cls");
-            agregar(dato);
-            break;
 
-        case 2:
-        system("cls");
-            baja(dato);
-            break;
+            opcion = atoi(auxMenu);
 
-        case 3:
-        system("cls");
-            mostrar(dato);
-            break;
+            switch (opcion)
+            {
+            case 1:
+                system("cls");
+                agregar(dato);
+                break;
 
-        case 4:
-        system("cls");
-            ordenarNombre(dato, ASC);
-            mostrarNombre(dato);
-            break;
-        case 5:
-        system("cls");
-            cargaValor(edades, contadorMenor(dato), contadorMayor(dato), contadorAdulto(dato));
-            muestraValor(edades);
-            break;
-        case 6:
-        system("cls");
-            break;
+            case 2:
+                system("cls");
+                baja(dato);
+                break;
 
-        default:
-            printf("\nNO ES OPCION DEL MENU\n");
+            case 3:
+                system("cls");
+                mostrar(dato);
+                break;
+
+            case 4:
+                system("cls");
+                ordenarNombre(dato, ASC);
+                mostrarNombre(dato);
+                break;
+            case 5:
+                system("cls");
+                cargaValor(edades, contadorMenor(dato), contadorMayor(dato), contadorAdulto(dato));
+                muestraValor(edades);
+                break;
+            case 6:
+                system("cls");
+                limpio(dato);
+                printf("\nDatos borrados\n");
+                break;
+            case 7:
+                system("cls");
+                break;
+
+            default:
+                system("cls");
+                printf("\nNO ES OPCION DEL MENU\n");
+            }
         }
 
-    } while (opcion != 6);
+    } while (opcion != 7);
 
     return 0;
 }
-

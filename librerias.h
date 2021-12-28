@@ -7,7 +7,7 @@
 
 #define MAX 20
 
-#define LISTA 3 // y tambien es FILA
+#define LISTA 10 // y tambien es FILA
 #define COLUMNA 3
 
 #define ASC 1

@@ -9,8 +9,10 @@ void mostrarMenu()
     printf("2- Borrar persona\n");
     printf("3- mostrar\n");
     printf("4- Imprimir lista ordenada por nombre\n");
-    printf("5- Imprimir grafico de edades\n\n");
-    printf("6- Salir\n");
+    printf("5- Imprimir grafico de edades\n");
+    printf("6- Borrar todo\n\n");
+    printf("7- Salir\n");
+
 }
 
 /////////////////////////////////////////////////////
@@ -68,7 +70,7 @@ void agregar(Persona dato[MAX])
             }
             else
             {
-                dato[i].edad = atoi(EDAD);
+             dato[i].edad = atoi(EDAD);    
             }
 
             if (!validarNumero("\nIngrese DNI: ", DNI))
@@ -124,7 +126,9 @@ void mostrar(Persona dato[MAX])
                dato[i].dni,
                dato[i].estado);
     }
-};
+}
+
+///////////////////////////////////////////////////////
 
 void baja(Persona dato[MAX])
 {
@@ -145,6 +149,8 @@ void baja(Persona dato[MAX])
         printf("\nNO SE ESCUENTRA EL DATO\n");
     }
 }
+
+///////////////////////////////////////////////////////
 
 int buscarPersona(Persona dato[MAX])
 {
