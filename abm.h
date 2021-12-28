@@ -2,6 +2,8 @@
 #define ABM_H_INCLUDED
 
 #include "librerias.h"
+#include "validaciones.h"
+#include "grafico.h"
 
 //////////////ABM///////////////////////
 void agregar(Persona dato[MAX]);
@@ -13,6 +15,5 @@ void completarBusqueda(Persona dato[MAX]);
 int buscarPersona(Persona dato[MAX]);
 
 void mostrarMenu();
-
 
 #endif
