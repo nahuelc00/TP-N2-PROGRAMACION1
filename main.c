@@ -1,7 +1,3 @@
-// Hacer un programa que defina un array de 20
-// items de esta estructura y con un menu como el
-// siguiente
-
 #include "grafico.h"
 #include "validaciones.h"
 #include "ordenar.h"

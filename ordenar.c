@@ -1,8 +1,4 @@
-
-
 #include "ordenar.h"
-
-
 
 /////////////////////////////////--ordenar---/////////////////
 
@@ -42,11 +38,11 @@ void mostrarNombre(Persona dato[MAX])
     {
         if (dato[i].estado != 0)
         {
-              printf("\nNombre: %s  Edad: %d  DNI:%d  Estado:%d\n",
-               dato[i].nombre,
-               dato[i].edad,
-               dato[i].dni,
-               dato[i].estado);
+            printf("\nNombre: %s  Edad: %d  DNI:%d  Estado:%d\n",
+                   dato[i].nombre,
+                   dato[i].edad,
+                   dato[i].dni,
+                   dato[i].estado);
         }
     }
 }
